@@ -20,21 +20,19 @@
     var CONFIG = {"hostname":"masterhzc.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="关于 JavaScript 数据类型的几个问题：  为什么有的编程规范要求用 void 0 代替 undefined 字符串有最大长度吗 0.1 + 0.2 为什么不等于 0.3 （经典面试题） ES6 中的 Symbol 为什么可以基础类型添加方法">
+  <meta name="description" content="有效的字母异位词分析题目：字母异位词本道题目中是包含了相同的两个字母，也就是说两个相同的字母也算做了异位词。主要是考察两个字符的元素组成是否相同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 类型值">
-<meta property="og:url" content="https://masterhzc.github.io/2020/03/01/JavaScript%E7%B1%BB%E5%9E%8B%E5%80%BC/">
+<meta property="og:title" content="isAnagram">
+<meta property="og:url" content="https://masterhzc.github.io/2020/03/02/isAnagram/">
 <meta property="og:site_name" content="HH的网络日志">
-<meta property="og:description" content="关于 JavaScript 数据类型的几个问题：  为什么有的编程规范要求用 void 0 代替 undefined 字符串有最大长度吗 0.1 + 0.2 为什么不等于 0.3 （经典面试题） ES6 中的 Symbol 为什么可以基础类型添加方法">
-<meta property="og:image" content="https://masterhzc.github.io/images/16a4f2dfc36ddcc4.webp">
-<meta property="article:published_time" content="2020-03-01T03:41:36.000Z">
-<meta property="article:modified_time" content="2020-03-02T01:00:37.075Z">
+<meta property="og:description" content="有效的字母异位词分析题目：字母异位词本道题目中是包含了相同的两个字母，也就是说两个相同的字母也算做了异位词。主要是考察两个字符的元素组成是否相同">
+<meta property="article:published_time" content="2020-03-02T05:18:36.000Z">
+<meta property="article:modified_time" content="2020-03-02T05:19:43.383Z">
 <meta property="article:author" content="Huang">
-<meta property="article:tag" content="JavaScript 7其中基础类型">
+<meta property="article:tag" content="算法有效的字母异位词">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://masterhzc.github.io/images/16a4f2dfc36ddcc4.webp">
 
-<link rel="canonical" href="https://masterhzc.github.io/2020/03/01/JavaScript%E7%B1%BB%E5%9E%8B%E5%80%BC/">
+<link rel="canonical" href="https://masterhzc.github.io/2020/03/02/isAnagram/">
 
 
 <script id="page-configurations">
@@ -46,7 +44,7 @@
   };
 </script>
 
-  <title>JavaScript 类型值 | HH的网络日志</title>
+  <title>isAnagram | HH的网络日志</title>
   
 
 
@@ -190,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://masterhzc.github.io/2020/03/01/JavaScript%E7%B1%BB%E5%9E%8B%E5%80%BC/">
+    <link itemprop="mainEntityOfPage" href="https://masterhzc.github.io/2020/03/02/isAnagram/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript 类型值
+          isAnagram
         </h1>
 
         <div class="post-meta">
@@ -212,28 +210,22 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-01 11:41:36" itemprop="dateCreated datePublished" datetime="2020-03-01T11:41:36+08:00">2020-03-01</time>
+              <time title="创建时间：2020-03-02 13:18:36 / 修改时间：13:19:43" itemprop="dateCreated datePublished" datetime="2020-03-02T13:18:36+08:00">2020-03-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-02 09:00:37" itemprop="dateModified" datetime="2020-03-02T09:00:37+08:00">2020-03-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/03/01/JavaScript%E7%B1%BB%E5%9E%8B%E5%80%BC/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript 类型值" title="阅读次数">
+            <span id="/2020/03/02/isAnagram/" class="post-meta-item leancloud_visitors" data-flag-title="isAnagram" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -250,143 +242,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>关于 JavaScript 数据类型的几个问题：</p>
-<ul>
-<li>为什么有的编程规范要求用 void 0 代替 undefined</li>
-<li>字符串有最大长度吗</li>
-<li>0.1 + 0.2 为什么不等于 0.3 （经典面试题）</li>
-<li>ES6 中的 Symbol</li>
-<li>为什么可以基础类型添加方法<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="关于类型"><a href="#关于类型" class="headerlink" title="关于类型"></a>关于类型</h1><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>问题：</p>
-<ul>
-<li>为什么有的编程规范要求用 void 0 代替 undefined</li>
-<li>字符串有最大长度吗</li>
-<li>0.1 + 0.2 为什么不等于 0.3 （经典面试题）</li>
-<li>ES6 中的 Symbol</li>
-<li>为什么可以基础类型添加方法</li>
-</ul>
-<p>概念：</p>
-<ul>
-<li>运行时</li>
-</ul>
-<blockquote>
-<p>运行时类型是代码实际执行过程中我们使用的类型。属于7中基础类型。从变量、参数、返回值到表达式中间结果，任何JavaScript代码运行过程中产生的数据，都具有运行时类型</p>
-</blockquote>
-<p>类型：</p>
-<ol>
-<li><p>Undefined</p>
-</li>
-<li><p>Null</p>
-</li>
-<li><p>Boolean</p>
-</li>
-<li><p>String</p>
-</li>
-<li><p>Number</p>
-</li>
-<li><p>Symbol</p>
-</li>
-<li><p>Object</p>
-<h3 id="Undefined-Null"><a href="#Undefined-Null" class="headerlink" title="Undefined Null"></a>Undefined Null</h3></li>
-</ol>
-<ul>
-<li>Undefined 一种数据类型，表示未定义，有唯一值 undefined，任何变量在赋值之前都是undefined。但是undefined不是关键字，也不是保留字，所以undefined可以被赋值，所以为了避免出现一些不可预知的错误，会使用void运算来给一个任意表达式赋值undefined。</li>
-<li>Null 也是一种数据结构，也只有一个值null。但是表示的意义是<strong>定义了但是值为空</strong>。MDN中的解释是一个对象，但是没有赋值</li>
-</ul>
-<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
-<li>最大长度是 2 ^ 53 - 1，但是这个最大长度不是<code>字符串</code>的最大长度，而是字符串的UTF16编码的最大长度 。字符串关于UTF16编码的操作有，charAt、charCodeAt等方法</li>
-</ul>
-<blockquote>
-<p>现行字符是以Unicode的方法表示的，每一个Unicode的码点表示一个字符，理论上，Unicode的范围是无限的。UTF是Unicode的编码方式。常见的有UTF16、UTF8</p>
-</blockquote>
-<ul>
-<li>JavaScript 字符串把每个UTF16单元当作一个字符处理，所以处理非BMP（超出 U+0000 - U+FFFF范围），的字符需要格外小心</li>
-</ul>
-<blockquote>
-<p>这种设计继承子Java，标准中的解释是为了 “性能和极可能实现起来简单”</p>
-</blockquote>
-<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><ul>
-<li>关于JavaScript中的Number类型，不像Java有多种数字的类型。JavaScript中的Number类型有 2 ^ 64 - 2 ^ 53 + 3 个值。基本遵循了IEEE 754-2008 规定中的双精度浮点规则，但是在此基础上做了一些改动（除以0不出错，引入无穷的概念）：</li>
-</ul>
-<ol>
-<li>NaN 占用了 9007199254740990 </li>
-<li>Infinity 无穷大</li>
-<li>-Infinity 负无穷大</li>
-</ol>
-<ul>
-<li><p>JavaScript 中有 +0 和 -0的概念。区分方式是1/x的Infinity还是-Infinity</p>
-</li>
-<li><p>根据双精度浮点的定义，Number类型中有效整数范围是-0x1fffffffffffff 至 0x1fffffffffffff，所以Number无法精确表示超出此范围外的整数</p>
-</li>
-<li><p>同样，根据浮点数的定义，非整数的Number类型无法使用==（或===）来比较，因此这就是为很么0.1 + 0.2 不等于0.3</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">0.1</span> + <span class="number">0.2</span> == <span class="number">0.3</span>) <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 正确的比较方法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs(<span class="number">0.1</span> + <span class="number">0.2</span> - <span class="number">0.3</span>) &lt;= <span class="built_in">Number</span>.EPSILON)</span><br></pre></td></tr></table></figure>
-
-<h3 id="关于双浮点精度"><a href="#关于双浮点精度" class="headerlink" title="关于双浮点精度"></a>关于双浮点精度</h3><ul>
-<li>浮点数不是小数</li>
-</ul>
-<p>计算机中的小数分为两种，定点和浮点。定点是小数点固定在32为重的某一个位置，前面是整数，后面是小数，小数点具体的位置取决于程序。优点是运算简单，缺点是范围太小，精度差，不能充分运用储存单位。浮点的设计就是为了克服这个缺点，它相当于一个定点数加上阶码，阶码表示将这个定点数的小数点移动若干位。由于可以用阶码移动小数点，因此成为浮点数。</p>
-<ul>
-<li>JavaScript中的浮点数</li>
-</ul>
-<p>JS只有一种数字类型，Number。遵循了IEEE754标准，使用64位的精度表示浮点。</p>
-<p><img src="/images/16a4f2dfc36ddcc4.webp" alt="16a4f2dfc36ddcc4"></p>
-<p>根据这个标准，将64为分成三个部分</p>
-<ol>
-<li>符号位：1位由于标志位。表示正数或者负数</li>
-<li>指数位：11位由于表示指数。允许的最大指数是1024</li>
-<li>尾数为：剩下的52位，超出的部分自动进一舍零</li>
-</ol>
-<ul>
-<li>为什么会缺失精度</li>
-</ul>
-<p>计算机的计算方式是二进制，编写程序用的是十进制。因此一个程序完成的流程是这样的</p>
-<p>先将十进制转换成二进制，再通过二进制的科学计数法表示，最后再表示成IEEE754的标准，因此在这个过程中出现了精度丢失的问题。</p>
-<ul>
-<li>解决办法</li>
-</ul>
-<ol>
-<li>重写 toFixed（通过转字符串的方式判断）</li>
-<li>将小数转化成相对应的整数，计算之后再还原会小数</li>
-</ol>
-<h3 id="隐式转化"><a href="#隐式转化" class="headerlink" title="隐式转化"></a>隐式转化</h3><ul>
-<li>Object 转换成 String Number</li>
-</ul>
-<p>Javascript 标准中 规定了 ToPrimitive函数 ，将对象类型转换到基础类型。这个过程遵循了“先拆箱再转换”的规则。通过拆箱转换，把对象变成基本类型，再从基本类型转换成对应的String或者Number。</p>
-<p>拆箱转换会尝试调用valueOf和toString来获取相应的基础数据类型。如果valueOf和toString都不存在就会 返回一个TypeError</p>
-<p>关于valueOf和toString的调用顺序分为两种</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  valueOf () &#123; <span class="built_in">console</span>.log(<span class="string">'value of'</span>); <span class="keyword">return</span> &#123;&#125; &#125;,</span><br><span class="line">  toString () &#123; <span class="built_in">console</span>.log(<span class="string">'to string'</span>); <span class="keyword">return</span> &#123;&#125; &#125;</span><br><span class="line">&#125;</span><br><span class="line">o * <span class="number">2</span></span><br><span class="line"><span class="comment">// value of</span></span><br><span class="line"><span class="comment">// to string</span></span><br><span class="line"><span class="comment">// TypeError</span></span><br></pre></td></tr></table></figure>
-
-<p>如果换一种形式</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(o)</span><br><span class="line"><span class="comment">// to string</span></span><br><span class="line"><span class="comment">// value of </span></span><br><span class="line"><span class="comment">// TypeError</span></span><br></pre></td></tr></table></figure>
-
-<p>在通过 String() 函数转换的时候 会优先调用 内部的toString方法 在失败之后再次 尝试valueOf </p>
-<p>而在 es6 之后 允许使用 @@toPrimitive Symbol 来覆盖原有行为</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">o[<span class="built_in">Symbol</span>.toPrimitive] = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'toPrimitive'</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'hello'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(o + <span class="string">''</span>)</span><br><span class="line"><span class="comment">// toPrimitive</span></span><br><span class="line"><span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>如何不是用 Number 或者 parseInt ，实现String 到 Number 的转化</p>
-<ul>
-<li>几个运算符</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. ~~</span><br><span class="line">2. **</span><br><span class="line">3. &gt;&gt;</span><br><span class="line">4. &gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>这几个符号引申出的就是 JavaScript 的位运算符 确实不会</p>
-<ul>
-<li>关于隐式转化</li>
-</ul>
-<p>隐式转换规则</p>
-<ol>
-<li><p>日期对象调用，toString；其他对象隐式转化，优先调用valueOf（需要返回一个primitive），否组调用 toString，如果仍然没有会一个基础类型的值报错 TypeError</p>
-</li>
-<li><p>进行对象到原始值的转换后，如果其中一个操作数是字符串的话，另一个操作数也会转换为字符串</p>
-</li>
-<li><p>否则，两个操作数都将转换成数字（或NaN）</p>
-</li>
-</ol>
+        <h1 id="有效的字母异位词"><a href="#有效的字母异位词" class="headerlink" title="有效的字母异位词"></a>有效的字母异位词</h1><p>分析题目：<br>字母异位词本道题目中是包含了相同的两个字母，也就是说两个相同的字母也算做了异位词。主要是考察两个字符的元素组成是否相同</p>
+<a id="more"></a>
+<h1 id="leetcode-242-有效的字母异位词"><a href="#leetcode-242-有效的字母异位词" class="headerlink" title="leetcode 242 有效的字母异位词"></a>leetcode 242 有效的字母异位词</h1><p>分析题目：<br>字母异位词本道题目中是包含了相同的两个字母，也就是说两个相同的字母也算做了异位词。主要是考察两个字符的元素组成是否相同</p>
+<h3 id="题解-1-排序"><a href="#题解-1-排序" class="headerlink" title="题解 1. 排序"></a>题解 1. 排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isAnagram = <span class="function"><span class="keyword">function</span>(<span class="params">s, t</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 把排序放在第一个是因为 这类题目排序是一个很重要的思路 之后会有一个将 异位字母分类的题目中一个主要解法就是通过排序完成的</span></span><br><span class="line">  <span class="keyword">if</span> (s.length !== t.length) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> sSorted = s.split(<span class="string">''</span>).sort().join(<span class="string">''</span>) </span><br><span class="line">  <span class="keyword">let</span> tSorted = t.split(<span class="string">''</span>).sort().join(<span class="string">''</span>) </span><br><span class="line">  <span class="keyword">if</span> (sSorted !== tSorted) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">// 128 ms 30.78% 38.1 MB 50.09%</span></span><br><span class="line">  <span class="comment">// 132 ms 25.77% 38.2 MB 45.48%</span></span><br><span class="line">  <span class="comment">// 时间复杂度 O(nlogn)</span></span><br></pre></td></tr></table></figure>
+<h3 id="题解-2-hash-table"><a href="#题解-2-hash-table" class="headerlink" title="题解 2. hash table"></a>题解 2. hash table</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isAnagram = <span class="function"><span class="keyword">function</span>(<span class="params">s, t</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// 像这种不太复杂的题目 使用hash table 基本都是 O（n）的时间复杂度</span></span><br><span class="line">  <span class="keyword">if</span> (s.length !== t.length) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> len = s.length</span><br><span class="line">  <span class="keyword">let</span> hashMap = <span class="keyword">new</span> <span class="built_in">Map</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="comment">// 将字符中不同字母 分类 统计每一类型 的数量</span></span><br><span class="line">    <span class="keyword">if</span> (hashMap.has(s[i])) &#123;</span><br><span class="line">      hashMap.set(s[i], hashMap.get(s[i]) + <span class="number">1</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      hashMap.set(s[i], <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">    <span class="comment">// 如果 两个字母的 类型相同 每个类型的字母数量也相同 那么这两个字母就是异位字母</span></span><br><span class="line">    <span class="keyword">if</span> (!hashMap.has(t[j]) || hashMap.get(t[j]) === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    hashMap.set(t[j], hashMap.get(t[j]) - <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">//  76 ms, faster than 59.73%</span></span><br><span class="line">  <span class="comment">//  100 ms 51.82%</span></span><br><span class="line">  <span class="comment">// 这个已经O(n)的复杂度了 但是结果也是没有及格</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最后是推荐解法：-数组模拟hash表"><a href="#最后是推荐解法：-数组模拟hash表" class="headerlink" title="最后是推荐解法： 数组模拟hash表"></a>最后是推荐解法： 数组模拟hash表</h3><p>这个思路 主要在一 用一个 26 位的数组模拟 hashmap 也是 O(n) 的复杂度但是真的很快</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isAnagram = <span class="function"><span class="keyword">function</span>(<span class="params">s, t</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (s.length !== t.length) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> len = s.length</span><br><span class="line">  <span class="keyword">let</span> hashArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">26</span>).fill(<span class="number">0</span>)</span><br><span class="line">  <span class="keyword">let</span> baseCount = <span class="string">'a'</span>.charCodeAt()</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) hashArray[s.charCodeAt(i) - baseCount]++</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; len; j++) hashArray[t.charCodeAt(j) - baseCount]--</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> hashArray) <span class="keyword">if</span> (hashArray[key] !== <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">// 60 ms 99.73%</span></span><br><span class="line">  <span class="comment">// 64 ms, faster than 91.72%</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>问题在于数据结构上。再同样的时间复杂度，但从两次提交结果来看数组要比map快很多。在网上查了一下鲜有介绍JavaScript中两种数据结构的对比</p>
 
     </div>
 
@@ -402,7 +265,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://masterhzc.github.io/2020/03/01/JavaScript%E7%B1%BB%E5%9E%8B%E5%80%BC/" title="JavaScript 类型值">https://masterhzc.github.io/2020/03/01/JavaScript类型值/</a>
+    <a href="https://masterhzc.github.io/2020/03/02/isAnagram/" title="isAnagram">https://masterhzc.github.io/2020/03/02/isAnagram/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -413,7 +276,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JavaScript-7%E5%85%B6%E4%B8%AD%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" rel="tag"># JavaScript 7其中基础类型</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" rel="tag"># 算法有效的字母异位词</a>
           </div>
 
         
@@ -421,11 +284,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/03/02/isAnagram/" rel="next" title="isAnagram">
-      isAnagram <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/01/JavaScript%E7%B1%BB%E5%9E%8B%E5%80%BC/" rel="prev" title="JavaScript 类型值">
+      <i class="fa fa-chevron-left"></i> JavaScript 类型值
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -485,7 +348,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于类型"><span class="nav-number">1.</span> <span class="nav-text">关于类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">1.0.1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Undefined-Null"><span class="nav-number">1.0.2.</span> <span class="nav-text">Undefined Null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.0.3.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">1.0.4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于双浮点精度"><span class="nav-number">1.0.5.</span> <span class="nav-text">关于双浮点精度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式转化"><span class="nav-number">1.0.6.</span> <span class="nav-text">隐式转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">1.0.7.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#有效的字母异位词"><span class="nav-number">1.</span> <span class="nav-text">有效的字母异位词</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode-242-有效的字母异位词"><span class="nav-number">2.</span> <span class="nav-text">leetcode 242 有效的字母异位词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-1-排序"><span class="nav-number">2.0.1.</span> <span class="nav-text">题解 1. 排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-2-hash-table"><span class="nav-number">2.0.2.</span> <span class="nav-text">题解 2. hash table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后是推荐解法：-数组模拟hash表"><span class="nav-number">2.0.3.</span> <span class="nav-text">最后是推荐解法： 数组模拟hash表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">2.0.4.</span> <span class="nav-text">问题</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
